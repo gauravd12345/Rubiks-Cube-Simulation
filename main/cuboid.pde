@@ -22,6 +22,16 @@ class Cuboid{
     
   }
   
+  public void setMatrix(float[] nmatrix){
+    this.matrix = nmatrix;
+    this.x = nmatrix[0];
+    this.y = nmatrix[1];
+    this.z = nmatrix[2];
+    
+    
+  }
+  
+  
   public float[] getMatrix(){
     return this.matrix;
     

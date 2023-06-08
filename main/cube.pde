@@ -3,12 +3,13 @@ class Cube{
   Cuboid[] Cube = new Cuboid[int(size * size * size)];
   
   
+  // Constructor for the Cube class
   public Cube(){
       /* 
       Creating the actual cube:
         Each loop is for each dimension
         Each group of numbers in the loop(Ex: x = 1, y = 0, z = -1)
-          refers to a cuboid coordinate
+          refers to the cuboid's coordinates
           
         Each cuboid is then added to the cube
     */
@@ -34,6 +35,15 @@ class Cube{
     }
 
   }
+  
+  
+  // Returns the Cube object
+  public Cuboid[] getCube(){
+    return this.Cube;
+    
+  }
+  
+  
   
   public void turnX(int dir){
     int off = 0;
@@ -212,18 +222,5 @@ class Cube{
     
   }
   
-  
 
-  
-  
-  
-  
-  
-   public Cuboid[] getCube(){
-    return this.Cube;
-    
-  }
-  
-  
-  
 }
