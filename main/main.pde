@@ -14,17 +14,18 @@ Cube cube = new Cube();
 // List representing color values
 // Order: G, B, R, O, W, Y 
 int[] CLR = {#00FF00, #0000FF, #FF0000,
-             #FFA500, #FFFFFF, #FFFF00};
+             #FFA500, #FFFFFF, #FFFF00,
+             #000000};
                         
                           
 // Creating variables for rotation animation
 int alg_step = 0;
-String alg = ("R U R' U' R' F R2 U' R' U' R U R' F'").toLowerCase();
+String alg = (" ").toLowerCase();
 String[] movelist = alg.split(" ");
 float angle = PI/2;
 boolean isAnimating = false;
 boolean isTurning = false;
-float angle_rotation_speed = 4;
+float angle_rotation_speed = 3;
 float[] rlist = new float[int(size * size * size)];
 
 void setup(){
@@ -83,6 +84,10 @@ void draw(){
          angle = PI/2;
        }
     }
+    
+    
+    
+    
     
     if(isAnimating){
       if(rlist[i] < angle){

@@ -7,7 +7,8 @@ class Cuboid{
   
 
   int[] colorset = {#00FF00, #0000FF, #FF0000,
-                    #FFA500, #FFFFFF, #FFFF00};
+                    #FFA500, #FFFFFF, #FFFF00,
+                    #000000};
              
   
   
@@ -38,14 +39,14 @@ class Cuboid{
   }
   
   public void drawCuboid(){
+      int count = 0;
       for(int j = 0; j < 3; j++){
         for(int k = 0; k < 2; k++){
           pushMatrix();
 
           // Translation to set the face at the position of x, y, z coordinates
           translate(0, 0, this.z - ((bdim * 2) * k) + bdim);
-          
-          
+
           /* 
             The following translations offset the faces to their correct position
             
@@ -54,10 +55,13 @@ class Cuboid{
             
             // Translation about the Y-axis(Right and Left faces)
             if(k == 0){
-              translate(this.x + bdim, 0, -this.x - bdim);             
+              translate(this.x + bdim, 0, -this.x - bdim);  
+
             }
             else{
               translate(this.x - bdim, 0, -this.x + bdim);
+
+              
             }
             rotateY(-PI/2);
           }
@@ -70,6 +74,7 @@ class Cuboid{
             }
             else{
               translate(0, this.y + bdim, this.y + bdim);    
+              
             }   
             rotateX(-PI/2);      
           }
@@ -80,13 +85,16 @@ class Cuboid{
           float[] v = {x - bdim, y - bdim, x + bdim, y - bdim, 
                        x + bdim, y + bdim, x - bdim, y + bdim};
           
+          //System.out.println((count) + " " + v[0] + " " + v[1] + " " + v[2] + " " +  v[3] + " " +  v[4] + " " + v[5] + " " + v[6] + " " + v[7]);
           fill(this.colorset[k + (j * 2)]);
+          //System.out.println(count + " " + (this.z - ((bdim * 2) * k)));
+          
           
           // Drawing the face onto the screen
 
           quad(v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7]);
           
-
+          count++;
           popMatrix();
   
        
