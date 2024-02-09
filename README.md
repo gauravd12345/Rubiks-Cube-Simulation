@@ -1,2 +1,2 @@
 # Rubiks-Cube-Simulation
-A 3D simulation of a Rubik's cube. 
+A 3D simulation software for modeling a Rubik's Cube. Used Processing & Java for developing the graphical interface and model respectively. The model is created by rendering individual cuboids in 3D space. The cuboids themselves are formed from 6 planes(xy, yz, etc.) that denote a side based on their color. Users can choose to manually control the model or submit an algorithm to execute. Specifically, keyboard input's can be used to directly control the sides of the cube. To control the camera, users can simply move the mouse cursor around to change the position of the camera. The program also gives users the option to simulate an algorithm of any length in real time.
